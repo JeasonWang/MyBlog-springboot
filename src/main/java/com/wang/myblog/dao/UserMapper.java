@@ -7,5 +7,10 @@ import java.util.List;
 
 @Repository
 public interface UserMapper {
-    public List<User> getUsers();
+    List<User> getUsers();
+    User getUserById(int id);
+    int updateUser(User user);
+    int addUser(User user);
+    int deleteUserById(int id);
+    User searchUserByName(String  username);
 }

@@ -4,4 +4,20 @@
     <select id="getUsers" resultType="com.wang.myblog.entity.User">
         select * from user
     </select>
+    <select id="getUserById" parameterType="int" resultType="com.wang.myblog.entity.User">
+        select * from user where id=#{id}
+    </select>
+    <select id="searchUserByName" parameterType="string" resultType="com.wang.myblog.entity.User">
+        select * from user where username=#{username}
+    </select>
+
+    <delete id="deleteUserById" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+    <update id="updateUser" parameterType="com.wang.myblog.entity.User">
+        update user set username=#{username} and password=#{password} where id=#{id}
+    </update>
+    <insert id="addUser" parameterType="com.wang.myblog.entity.User">
+        insert into user value (null,#{username},#{password})
+    </insert>
 </mapper>
