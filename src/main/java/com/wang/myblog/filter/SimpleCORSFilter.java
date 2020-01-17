@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 实现跨域
+ * 实现跨域，未使用，因为已经在angular中实现跨域
  *
- * @author:wmyskxz
- * @create:2018-06-21-下午 22:48
+ * @author:wang
+ * @create:2019-12-21-下午 22:48
  */
-@Component
+//@Component
 public class SimpleCORSFilter implements Filter {
 
     @Override
