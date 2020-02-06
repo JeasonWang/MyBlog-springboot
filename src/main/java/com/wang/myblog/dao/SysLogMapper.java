@@ -2,9 +2,10 @@ package com.wang.myblog.dao;
 
 import com.wang.myblog.entity.SysLog;
 import com.wang.myblog.entity.SysLogExample;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface SysLogMapper {
     int deleteByPrimaryKey(Long id);
 

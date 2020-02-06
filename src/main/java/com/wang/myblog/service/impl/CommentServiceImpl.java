@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 留言/评论Service实现类
  *
- * @author:wmyskxz
+ * @author:wanghuan
  * @create:2018-06-17-上午 10:54
  */
 @Service

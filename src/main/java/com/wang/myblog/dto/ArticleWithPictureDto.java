@@ -3,7 +3,7 @@ package com.wang.myblog.dto;
 /**
  * 带题图信息的文章基础信息分装类
  *
- * @author:wmyskxz
+ * @author:wanghuan
  * @create:2018-06-19-下午 14:53
  */
 public class ArticleWithPictureDto {

@@ -3,7 +3,7 @@ package com.wang.myblog.entity;
 /**
  * 用户类
  *
- * @author:wmyskxz
+ * @author:wanghuan
  * @create:2018-06-20-下午 19:03
  */
 public class User {

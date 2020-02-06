@@ -9,7 +9,7 @@ import java.util.Date;
  * 说明：关联了tbl_article_info/tbl_article_content/tbl_article_category/tbl_category_info/
  * tbl_article_picture五张表的基础字段
  *
- * @author:wmyskxz
+ * @author:wanghuan
  * @create:2018-06-19-下午 14:13
  */
 public class ArticleDto {

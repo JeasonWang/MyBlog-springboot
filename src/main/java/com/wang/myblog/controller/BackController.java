@@ -2,44 +2,39 @@ package com.wang.myblog.controller;
 
 import com.wang.myblog.dto.ArticleDto;
 import com.wang.myblog.entity.*;
+import com.wang.myblog.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * 后台控制器
  *
- * @author:wmyskxz
+ * @author:wanghuan
  * @create:2018-06-16-下午 15:08
  */
 @RestController
 @RequestMapping("/admin")
 public class BackController extends BaseController {
 
-    /* 后台登录账号密码 */
-    private static String username = "wmyskxz";
-    private static String password = "123456";
+    @Autowired
+    UserService userService;
 
     /**
      * 后台登录操作
      *
      * @param user
-     * @param request
      * @return
      */
     @PostMapping("/login")
-    public String login(User user, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        // 对用户账号进行验证,是否正确
-        if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            response.sendRedirect(request.getContextPath() + "/admin/index.html");
+    public User login(@RequestBody User user) {
+        User user1 = userService.getUser(user);
+        if (user1 != null) {
+            System.out.println("user = " + user);
+            return user;
         } else {
-            response.sendRedirect(request.getContextPath() + "/toLogin");
+            System.out.println("user is not exit");
+            return null;
         }
-        return null;
     }
 
     /**
@@ -47,7 +42,7 @@ public class BackController extends BaseController {
      *
      * @return
      */
-    @PostMapping("article/")
+    @PostMapping("article")
     public String addArticle(@RequestBody ArticleDto articleDto) {
         articleService.addArticle(articleDto);
         return null;
@@ -77,7 +72,6 @@ public class BackController extends BaseController {
     public String updateArticle(@PathVariable Long id, @RequestBody ArticleDto articleDto) {
         articleDto.setId(id);
         articleService.updateArticle(articleDto);
-//        System.out.println(articleDto.getTop());
         return null;
     }
 
@@ -117,7 +111,7 @@ public class BackController extends BaseController {
      * @return
      */
 
-    @RequestMapping(value = "category", method = RequestMethod.POST)
+    @PostMapping("category")
     public String addCategoryInfo(@RequestBody CategoryInfo categoryInfo) {
         categoryService.addCategory(categoryInfo);
         return null;
@@ -126,12 +120,11 @@ public class BackController extends BaseController {
     /**
      * 更新/编辑一条分类信息
      *
-     * @param id
      * @return
      */
 
-    @PutMapping("category/{id}")
-    public String updateCategoryInfo(@PathVariable Long id, @RequestBody CategoryInfo categoryInfo) {
+    @PutMapping("category")
+    public String updateCategoryInfo(@RequestBody CategoryInfo categoryInfo) {
         categoryService.updateCategory(categoryInfo);
         return null;
     }

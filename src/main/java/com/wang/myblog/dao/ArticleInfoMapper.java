@@ -2,9 +2,10 @@ package com.wang.myblog.dao;
 
 import com.wang.myblog.entity.ArticleInfo;
 import com.wang.myblog.entity.ArticleInfoExample;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface ArticleInfoMapper {
     int deleteByPrimaryKey(Long id);
 

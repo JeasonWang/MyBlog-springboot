@@ -2,9 +2,10 @@ package com.wang.myblog.dao;
 
 import com.wang.myblog.entity.ArticleContent;
 import com.wang.myblog.entity.ArticleContentExample;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public interface ArticleContentMapper {
     int deleteByPrimaryKey(Long id);
 

@@ -12,9 +12,14 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
+
+    @Override
     public List<User> getUsers(){
         return userMapper.getUsers();
     }
+
+    @Override
+    public User getUser(User user){ return userMapper.getUser(user); }
 
     @Override
     public User getUserById(int id) {

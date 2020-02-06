@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 用于从Request请求中获取到客户端的获取操作系统,浏览器及浏览器版本信息
  *
- * @author:wmyskxz
+ * @author:wanghuan
  * @create:2018-06-21-上午 8:40
  */
 public class BrowserUtil {

@@ -8,7 +8,7 @@ import java.util.Date;
  * 文章评论信息
  * 说明：关联了tbl_comment和tbl_article_comment两张表的信息
  *
- * @author:wmyskxz
+ * @author:wanghuan
  * @create:2018-06-19-下午 14:09
  */
 public class ArticleCommentDto {

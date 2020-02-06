@@ -8,6 +8,7 @@ import java.util.List;
 @Repository
 public interface UserMapper {
     List<User> getUsers();
+    User getUser(User user);
     User getUserById(int id);
     int updateUser(User user);
     int addUser(User user);
