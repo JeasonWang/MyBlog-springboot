@@ -6,6 +6,8 @@ import com.wang.myblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 后台控制器
  *
@@ -26,11 +28,12 @@ public class BackController extends BaseController {
      * @return
      */
     @PostMapping("/login")
-    public User login(@RequestBody User user) {
+    public User login(@RequestBody User user, HttpServletRequest request) {
         User user1 = userService.getUser(user);
         if (user1 != null) {
             System.out.println("user = " + user);
-            return user;
+            request.getSession().setAttribute("user",user1);
+            return user1;
         } else {
             System.out.println("user is not exit");
             return null;

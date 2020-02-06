@@ -21,7 +21,7 @@ public class MyWebMvcConfigurerAdapter implements WebMvcConfigurer {
     }
 
     public void addInterceptors(InterceptorRegistry registry){
-        registry.addInterceptor(getBackInterceptor()).addPathPatterns("/admin/**").excludePathPatterns("/toLogin");
-        registry.addInterceptor(getForeInterceptor()).addPathPatterns("/**").excludePathPatterns("/toLogin");
+        registry.addInterceptor(getBackInterceptor()).addPathPatterns("/admin/**").excludePathPatterns("/admin/login");
+        registry.addInterceptor(getForeInterceptor()).addPathPatterns("/**");
     }
 }
