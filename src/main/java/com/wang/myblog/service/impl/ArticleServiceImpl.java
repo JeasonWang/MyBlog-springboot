@@ -191,9 +191,10 @@ public class ArticleServiceImpl implements ArticleService {
 		articleDto.setPictureUrl(articlePicture.getPictureUrl());
 		articleDto.setArticlePictureId(articlePicture.getId());
 		// 填充文章分类信息
-		ArticleCategoryExample example2 = new ArticleCategoryExample();
-		example2.or().andArticleIdEqualTo(id);
-		ArticleCategory articleCategory = articleCategoryMapper.selectByExample(example2).get(0);
+//		ArticleCategoryExample example2 = new ArticleCategoryExample();
+//		example2.or().andArticleIdEqualTo(id);
+//		ArticleCategory articleCategory = articleCategoryMapper.selectByExample(example2).get(0);
+		ArticleCategory articleCategory = articleCategoryMapper.selectByArticlePrimaryKey(id);
 		articleDto.setArticleCategoryId(articleCategory.getId());
 		// 填充文章分类基础信息
 		CategoryInfoExample example3 = new CategoryInfoExample();

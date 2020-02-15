@@ -55,6 +55,12 @@
       order by ${orderByClause}
     </if>
   </select>
+  <select id="selectByArticlePrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_article_category
+    where article_id = #{article_id,jdbcType=BIGINT}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

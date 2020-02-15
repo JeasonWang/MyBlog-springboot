@@ -18,6 +18,8 @@ public interface ArticleCategoryMapper {
 
     ArticleCategory selectByPrimaryKey(Long id);
 
+    ArticleCategory selectByArticlePrimaryKey(Long article_id);
+
     int updateByPrimaryKeySelective(ArticleCategory record);
 
     int updateByPrimaryKey(ArticleCategory record);
